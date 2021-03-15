@@ -77,15 +77,40 @@ button:hover,
 /* Brand Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-/* Discord */
-.button.button-discord {
-  color: #FFFFFF;
-  background-color: #7289DA }
-.button.button-discord:hover,
-.button.button-discord:focus {
-  filter: brightness(90%) }
-
-/* Facebook */
+  /* Cookpad */
+  .button.button-cookpad {
+	color: #000;
+	background-color: #ff9933 }
+  .button.button-cookpad:hover,
+  .button.button-cookpad:focus {
+	filter: brightness(90%) }
+  
+  /* Google Docs */
+  .button.button-google-docs {
+	color: #000;
+	background-color: #ebebeb }
+  .button.button-google-docs:hover,
+  .button.button-google-docs:focus {
+	filter: brightness(90%) }
+  
+  /* Mixcloud */
+  .button.button-mixcloud {
+	display: none;
+	color: #fff;
+	background-color: #1f2335 }
+  .button.button-mixcloud:hover,
+  .button.button-mixcloud:focus {
+	filter: brightness(90%) }
+  
+  /* Discord */
+  .button.button-discord {
+	color: #FFFFFF;
+	background-color: #7289DA }
+  .button.button-discord:hover,
+  .button.button-discord:focus {
+	filter: brightness(90%) }
+  
+  /* Facebook */
 .button.button-facebook {
   color: #FFFFFF;
   background-color: #1877f2 }
@@ -191,7 +216,8 @@ button:hover,
 
 /* SoundCloud */
 .button.button-soundcloud {
-  color: #FFFFFF;
+	display: none;
+	color: #FFFFFF;
   background-color: #ff5500 }
 .button.button-soundcloud:hover,
 .button.button-soundcloud:focus {
@@ -199,6 +225,7 @@ button:hover,
 
 /* Spotify */
 .button.button-spotify {
+  display: none;
   color: #FFFFFF;
   background-color: #000000 }
 .button.button-spotify:hover,
@@ -255,7 +282,8 @@ button:hover,
 
 /* YouTube */
 .button.button-youtube {
-  color: #FFFFFF;
+	display: none;
+	color: #FFFFFF;
   background-color:  #000000 }
 .button.button-youtube:hover,
 .button.button-youtube:focus {

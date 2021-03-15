@@ -27,6 +27,32 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/avatar.png">
 
+  <script>
+	let db = {
+		zoldseges_lasagne : {
+			nev : 'Zöldséges lasagne',
+			recept_link : 'https://cookpad.com/hu/receptek/14619226-zoldseges-lasagne',
+			zene_szolgaltato : 'spotify',
+			zene_link : 'https://open.spotify.com/playlist/72cxf8xXRQOZiYbSJR71io?si=wIFpdf-VR6-MG9NbzcWGjg',
+			novella_link : 'https://docs.google.com/document/d/1nojsMsUpTiAkoq0XlvGheh1cBCiAznUwqxyj18c79-o/edit?usp=sharing'
+		}
+	};
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const theItem = db[urlParams.get('batyu')];
+
+	// document.getElementById('cookpad').innerHTML = '<a href="' + theItem.recept_link + '" target="_blank">' + theItem.nev + '</a>';
+	window.onload = () => {
+		document.getElementById('nev').innerHTML = theItem.nev;
+		document.getElementById('cookpad').href = theItem.recept_link;
+		document.getElementById('google-docs').href = theItem.novella_link;
+		document.getElementById(theItem.zene_szolgaltato).style.display = 'inline-block';
+		document.getElementById(theItem.zene_szolgaltato).href = theItem.zene_link;
+	}
+	
+	</script>
+
 </head>
 <body>
 
@@ -36,115 +62,37 @@
     <div class="row">
       <div class="column" style="margin-top: 10%">
         <!-- Your Image Here -->
-        <img src="images/avatar.png" srcset="images/avatar@2x.png 2x">
+        <!-- <img src="images/avatar.png" srcset="images/avatar@2x.png 2x"> -->
 
         <!-- Your Name -->
-        <h1>LittleLink</h1>
+        <h1 id="nev">Batyu</h1>
 
         <!-- Short Bio -->
-        <p>LittleLink is an open source DIY alternative to services like <a href="https://linktr.ee">Linktree</a> and <a href="https://many.link">many.link</a>. LittleLink was built using <a href="http://www.getskeleton.com">Skeleton</a>, a dead simple, responsive boilerplate—we’ve just created some branded buttons and stripped out the things you won't need. 😊</p>
+        <p>Tök jó, hogy nálad a batyu! Most már csak indítsd el a zenét, nyisd meg a receptet és vezesd le a novellával!</p>
         
 
         <!-- Replace # with your profile URL. Delete whatever you don't need & create your own brand styles in css/brands.css -->  
 
-        <!-- Github -->
-        <a class="button button-github" href="#"><img class="icon" src="icons/github.svg">Github</a>
-          <br>
-        
-        <!-- Twitter -->
-        <a class="button button-twitter" href="#"><img class="icon" src="icons/twitter.svg">Twitter</a>
+        <!-- Cookpad -->
+        <a id="cookpad" class="button button-cookpad" href="#"><img class="icon" src="icons/cookpad.png">Recept</a>
           <br>
 
-        <!-- Instagram -->
-        <a class="button button-instagram" href="#"><img class="icon" src="icons/instagram.svg">Instagram</a>
-          <br>
 
-        <!-- Facebook -->
-        <a class="button button-facebook" href="#"><img class="icon" src="icons/facebook.svg">Find us on Facebook</a>
-          <br>
-
-        <!-- Facebook Messenger -->
-        <a class="button button-messenger" href="#"><img class="icon" src="icons/messenger.svg">Chat on Messenger</a>
-        <br>   
-
-        <!-- LinkedIn -->
-        <a class="button button-linkedin" href="#"><img class="icon" src="icons/linkedin.svg">LinkedIn</a>
+        <!-- Google Docs -->
+        <a id="google-docs" class="button button-google-docs" href="#"><img class="icon" src="icons/google-docs.svg">Novella</a>
           <br>
 
         <!-- YouTube -->
-        <a class="button button-youtube" href="#"><img class="icon" src="icons/youtube.svg">YouTube</a>
-          <br> 
+        <a id="youtube" class="button button-youtube" href="#"><img class="icon" src="icons/youtube.svg">YouTube</a>
 
-        <!-- Discord -->
-        <a class="button button-discord" href="#"><img class="icon" src="icons/discord.svg">Discord</a>
-        <br>
-
-        <!-- Twitch -->
-        <a class="button button-twitch" href="#"><img class="icon" src="icons/twitch.svg">Twitch</a>
-          <br>
-
-        <!-- Snapchat -->
-        <a class="button button-snapchat" href="#"><img class="icon" src="icons/snapchat.svg">Snapchat</a>
-          <br>
+        <!-- Mixcloud -->
+        <a id="mixcloud" class="button button-mixcloud" href="#"><img class="icon" src="icons/mixcloud.png">Háttérzene</a>
 
         <!-- Spotify -->
-        <a class="button button-spotify" href="#"><img class="icon" src="icons/spotify.svg">Spotify</a>
-          <br>      
-          
-        <!-- Reddit -->
-        <a class="button button-reddit" href="#"><img class="icon" src="icons/reddit.svg">Reddit</a>
-          <br>   
-
-        <!-- Medium -->
-        <a class="button button-medium" href="#"><img class="icon" src="icons/medium.svg">Medium</a>
-          <br> 
-
-        <!-- Pinterest -->
-        <a class="button button-pinterest" href="#"><img class="icon" src="icons/pinterest.svg">Follow on Pinterest</a>
-          <br>
+        <a id="spotify" class="button button-spotify" href="#"><img class="icon" src="icons/spotify.svg">Háttérzene</a>
 
         <!-- SoundCloud -->
-        <a class="button button-soundcloud" href="#"><img class="icon" src="icons/soundcloud.svg">SoundCloud</a>
-          <br>              
-
-        <!-- Figma -->
-        <a class="button button-figma" href="#"><img class="icon" src="icons/figma.svg">Figma</a>
-          <br>
-
-        <!-- Kit -->
-        <a class="button button-kit" href="#"><img class="icon" src="icons/kit.svg">Kit</a>
-          <br>          
-
-        <!-- Telegram -->
-        <a class="button button-telegram" href="#"><img class="icon" src="icons/telegram.svg">Telegram</a>
-          <br>          
-
-        <!-- Tumblr -->
-        <a class="button button-tumblr" href="#"><img class="icon" src="icons/tumblr.svg">Tumblr</a>
-          <br>
-
-        <!-- Steam -->
-        <a class="button button-steam" href="#"><img class="icon" src="icons/steam.svg">Steam</a>
-          <br>
-
-        <!-- Vimeo -->
-        <a class="button button-vimeo" href="#"><img class="icon" src="icons/vimeo.svg">Vimeo</a>
-        <br>
-          
-        <!-- Wordpress -->
-        <a class="button button-wordpress" href="#"><img class="icon" src="icons/wordpress.svg">Wordpress</a>
-
-        <!-- Goodreads -->
-        <a class="button button-goodreads" href="#"><img class="icon" src="icons/goodreads.svg">Goodreads</a>
-          <br>
-
-        <!-- Skoob -->
-        <a class="button button-skoob" href="#"><img class="icon" src="icons/skoob.svg">Skoob</a>
-          <br>
-
-        <br>
-        <br>
-        <p>Build your own by forking <a href="https://littlelink.io">LittleLink</a>.</p>
+        <a id="soundcloud" class="button button-soundcloud" href="#"><img class="icon" src="icons/soundcloud.svg">Háttérzene</a>
           
       </div>
     </div>
