@@ -25,7 +25,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/avatar.png">
+  <!-- <link rel="icon" type="image/png" href="images/avatar.png"> -->
 
   <script>
 	let db = {
@@ -35,15 +35,44 @@
 			zene_szolgaltato : 'spotify',
 			zene_link : 'https://open.spotify.com/playlist/72cxf8xXRQOZiYbSJR71io?si=wIFpdf-VR6-MG9NbzcWGjg',
 			novella_link : 'https://docs.google.com/document/d/1nojsMsUpTiAkoq0XlvGheh1cBCiAznUwqxyj18c79-o/edit?usp=sharing'
-		}
+		},
+		szecsuani_csirkemell_brokkolival : {
+			nev : 'Szecsuáni csirkemell brokkolival',
+			recept_link : 'https://cookpad.com/hu/receptek/14619294-szecsuani-csirkemell-brokkolival',
+			zene_szolgaltato : 'soundcloud',
+			zene_link : 'https://soundcloud.com/yeonkkot/sets/s06',
+			novella_link : 'https://docs.google.com/document/d/1PAtk1sqmD4vpKCcskFiRQlBj4K9n67mvDb8BFQSfxbU/edit?usp=sharing'
+		},
+		szecsuani_szejtan_brokkolival : {
+			nev : 'Szecsuáni szejtán brokkolival',
+			recept_link : 'https://cookpad.com/hu/receptek/14619294-szecsuani-szejtan-brokkolival',
+			zene_szolgaltato : 'mixcloud',
+			zene_link : 'https://www.mixcloud.com/cratesoul/cratesoul-radio-show-18022021-stellar-plates/',
+			novella_link : 'https://docs.google.com/document/d/1PAtk1sqmD4vpKCcskFiRQlBj4K9n67mvDb8BFQSfxbU/edit?usp=sharing'
+		},
+		csirke_curry_basmati_rizzsel_es_lepenykenyerrel : {
+			nev : 'Csirke curry basmati rizzsel és lepénykenyérrel',
+			recept_link : 'https://cookpad.com/hu/receptek/14724554-csirke-curry-basmati-rizzsel-es-lepenykenyerrel',
+			zene_szolgaltato : 'youtube',
+			zene_link : 'https://www.youtube.com/watch?v=ziywx5vexJM',
+			novella_link : 'https://docs.google.com/document/d/1nojsMsUpTiAkoq0XlvGheh1cBCiAznUwqxyj18c79-o/edit?usp=sharing'
+		},
+		zoldseges_curry_basmati_rizzsel_es_lepenykenyerrel : {
+			nev : 'Zöldséges curry basmati rizzsel és lepénykenyérrel',
+			recept_link : 'https://cookpad.com/hu/receptek/14724554-csirke-curry-basmati-rizzsel-es-lepenykenyerrel',
+			zene_szolgaltato : 'youtube',
+			zene_link : 'https://www.youtube.com/watch?v=ziywx5vexJM',
+			novella_link : 'https://docs.google.com/document/d/1nojsMsUpTiAkoq0XlvGheh1cBCiAznUwqxyj18c79-o/edit?usp=sharing'
+		},
 	};
 
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
-	const theItem = db[urlParams.get('batyu')];
+	const theItem = db[urlParams.get('batyu').replace('-', '_')];
 
 	// document.getElementById('cookpad').innerHTML = '<a href="' + theItem.recept_link + '" target="_blank">' + theItem.nev + '</a>';
 	window.onload = () => {
+		document.title = theItem.nev + ' - batyu recept'
 		document.getElementById('nev').innerHTML = theItem.nev;
 		document.getElementById('cookpad').href = theItem.recept_link;
 		document.getElementById('google-docs').href = theItem.novella_link;
@@ -74,25 +103,24 @@
         <!-- Replace # with your profile URL. Delete whatever you don't need & create your own brand styles in css/brands.css -->  
 
         <!-- Cookpad -->
-        <a id="cookpad" class="button button-cookpad" href="#"><img class="icon" src="icons/cookpad.png">Recept</a>
+        <a id="cookpad" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Recept</a>
           <br>
 
-
         <!-- Google Docs -->
-        <a id="google-docs" class="button button-google-docs" href="#"><img class="icon" src="icons/google-docs.svg">Novella</a>
+        <a id="google-docs" class="button button-google-docs" href="#" target="_blank"><img class="icon" src="icons/google-docs.svg">Irodalom</a>
           <br>
 
         <!-- YouTube -->
-        <a id="youtube" class="button button-youtube" href="#"><img class="icon" src="icons/youtube.svg">YouTube</a>
+        <a id="youtube" class="button button-youtube" href="#" target="_blank"><img class="icon" src="icons/youtube.svg">Háttérzene</a>
 
         <!-- Mixcloud -->
-        <a id="mixcloud" class="button button-mixcloud" href="#"><img class="icon" src="icons/mixcloud.png">Háttérzene</a>
+        <a id="mixcloud" class="button button-mixcloud" href="#" target="_blank"><img class="icon" src="icons/mixcloud.png">Háttérzene</a>
 
         <!-- Spotify -->
-        <a id="spotify" class="button button-spotify" href="#"><img class="icon" src="icons/spotify.svg">Háttérzene</a>
+        <a id="spotify" class="button button-spotify" href="#" target="_blank"><img class="icon" src="icons/spotify.svg">Háttérzene</a>
 
         <!-- SoundCloud -->
-        <a id="soundcloud" class="button button-soundcloud" href="#"><img class="icon" src="icons/soundcloud.svg">Háttérzene</a>
+        <a id="soundcloud" class="button button-soundcloud" href="#" target="_blank"><img class="icon" src="icons/soundcloud.svg">Háttérzene</a>
           
       </div>
     </div>
