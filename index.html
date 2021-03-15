@@ -59,7 +59,7 @@
 		},
 		zoldseges_curry_basmati_rizzsel_es_lepenykenyerrel : {
 			nev : 'Zöldséges curry basmati rizzsel és lepénykenyérrel',
-			recept_link : 'https://cookpad.com/hu/receptek/14724554-csirke-curry-basmati-rizzsel-es-lepenykenyerrel',
+			recept_link : 'https://cookpad.com/hu/receptek/14724554-zoldseges-curry-basmati-rizzsel-es-lepenykenyerrel',
 			zene_szolgaltato : 'youtube',
 			zene_link : 'https://www.youtube.com/watch?v=ziywx5vexJM',
 			novella_link : 'https://docs.google.com/document/d/1nojsMsUpTiAkoq0XlvGheh1cBCiAznUwqxyj18c79-o/edit?usp=sharing'
@@ -68,7 +68,7 @@
 
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
-	const theItem = db[urlParams.get('batyu').replace('-', '_')];
+	const theItem = db[urlParams.get('batyu').replaceAll('-', '_')];
 
 	// document.getElementById('cookpad').innerHTML = '<a href="' + theItem.recept_link + '" target="_blank">' + theItem.nev + '</a>';
 	window.onload = () => {
