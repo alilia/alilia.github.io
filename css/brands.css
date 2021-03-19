@@ -48,7 +48,8 @@ button {
   background-color: transparent;
   border-radius: 8px;
   cursor: pointer;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-bottom: 15px; }
 button:hover,
 .button:focus {
   color: #333;
