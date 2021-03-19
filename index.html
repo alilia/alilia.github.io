@@ -1,142 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Page Information
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>batyu recept</title>
+	<meta name="description" content="Find us online!">
+	<meta name="author" content="Seth Cottle">
 
-  <!-- Page Information
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>batyu recept</title>
-  <meta name="description" content="Find us online!">
-  <meta name="author" content="Seth Cottle">
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&display=swap" rel="stylesheet">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&display=swap" rel="stylesheet">
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton-light.css">
+	<link rel="stylesheet" href="css/brands.css">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton-light.css">
-  <link rel="stylesheet" href="css/brands.css">
+	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- <link rel="icon" type="image/png" href="images/avatar.png"> -->
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link rel="icon" type="image/png" href="images/avatar.png"> -->
+	<script>
+		let db = {
+			zoldseges_lasagne : {
+				nev : 'Zöldséges lasagne',
+				recept_link : 'https://bit.ly/3rQAlLS',
+				zene_szolgaltato : 'spotify',
+				zene_link : 'http://spoti.fi/3llK8Hh',
+				novella_link : 'http://bit.ly/3bQjyD0',
+				aji_link : null,
+			},
+			szecsuani_csirkemell_brokkolival : {
+				nev : 'Szecsuáni csirkemell brokkolival',
+				recept_link : 'https://bit.ly/30KjGOl',
+				zene_szolgaltato : 'soundcloud',
+				zene_link : 'http://bit.ly/3bQEMRt',
+				novella_link : 'http://bit.ly/2OEdvsD',
+				aji_link : null,
+			},
+			szecsuani_szejtan_brokkolival : {
+				nev : 'Szecsuáni szejtán brokkolival',
+				recept_link : 'https://bit.ly/3cyrzvH',
+				zene_szolgaltato : 'mixcloud',
+				zene_link : 'http://bit.ly/2NkKa5I',
+				novella_link : 'http://bit.ly/2OEdvsD',
+				aji_link : null,
+			},
+			csirke_curry_basmati_rizzsel_es_lepenykenyerrel : {
+				nev : 'Csirke curry basmati rizzsel és lepénykenyérrel',
+				recept_link : 'https://bit.ly/3eKBmBE',
+				zene_szolgaltato : 'youtube',
+				zene_link : 'https://bit.ly/3qPBuC7',
+				novella_link : 'http://bit.ly/3bQjyD0',
+				aji_link : 'https://bit.ly/2P89KLI',
+			},
+			zoldseges_curry_basmati_rizzsel_es_lepenykenyerrel : {
+				nev : 'Zöldséges curry basmati rizzsel és lepénykenyérrel',
+				recept_link : 'https://bit.ly/3vri4XH',
+				zene_szolgaltato : 'youtube',
+				zene_link : 'https://bit.ly/3cA8jOv',
+				novella_link : 'http://bit.ly/3ttSEHj',
+				aji_link : 'https://bit.ly/30Ylwv6',
+			},
+		};
 
-  <script>
-	let db = {
-		zoldseges_lasagne : {
-			nev : 'Zöldséges lasagne',
-			recept_link : 'https://bit.ly/3rQAlLS',
-			zene_szolgaltato : 'spotify',
-			zene_link : 'http://spoti.fi/3llK8Hh',
-			novella_link : 'http://bit.ly/3bQjyD0',
-			aji_link : null,
-		},
-		szecsuani_csirkemell_brokkolival : {
-			nev : 'Szecsuáni csirkemell brokkolival',
-			recept_link : 'https://bit.ly/30KjGOl',
-			zene_szolgaltato : 'soundcloud',
-			zene_link : 'http://bit.ly/3bQEMRt',
-			novella_link : 'http://bit.ly/2OEdvsD',
-			aji_link : null,
-		},
-		szecsuani_szejtan_brokkolival : {
-			nev : 'Szecsuáni szejtán brokkolival',
-			recept_link : 'https://bit.ly/3cyrzvH',
-			zene_szolgaltato : 'mixcloud',
-			zene_link : 'http://bit.ly/2NkKa5I',
-			novella_link : 'http://bit.ly/2OEdvsD',
-			aji_link : null,
-		},
-		csirke_curry_basmati_rizzsel_es_lepenykenyerrel : {
-			nev : 'Csirke curry basmati rizzsel és lepénykenyérrel',
-			recept_link : 'https://bit.ly/3eKBmBE',
-			zene_szolgaltato : 'youtube',
-			zene_link : 'https://bit.ly/3qPBuC7',
-			novella_link : 'http://bit.ly/3bQjyD0',
-			aji_link : 'https://bit.ly/2P89KLI',
-		},
-		zoldseges_curry_basmati_rizzsel_es_lepenykenyerrel : {
-			nev : 'Zöldséges curry basmati rizzsel és lepénykenyérrel',
-			recept_link : 'https://bit.ly/3vri4XH',
-			zene_szolgaltato : 'youtube',
-			zene_link : 'https://bit.ly/3cA8jOv',
-			novella_link : 'http://bit.ly/3ttSEHj',
-			aji_link : 'https://bit.ly/30Ylwv6',
-		},
-	};
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const theItem = db[urlParams.get('batyu').replaceAll('-', '_')];
 
-	const queryString = window.location.search;
-	const urlParams = new URLSearchParams(queryString);
-	const theItem = db[urlParams.get('batyu').replaceAll('-', '_')];
+		// document.getElementById('cookpad').innerHTML = '<a href="' + theItem.recept_link + '" target="_blank">' + theItem.nev + '</a>';
+		window.onload = () => {
+			document.title = theItem.nev + ' - batyu recept'
+			document.getElementById('nev').innerHTML = theItem.nev;
 
-	// document.getElementById('cookpad').innerHTML = '<a href="' + theItem.recept_link + '" target="_blank">' + theItem.nev + '</a>';
-	window.onload = () => {
-		document.title = theItem.nev + ' - batyu recept'
-		document.getElementById('nev').innerHTML = theItem.nev;
+			document.getElementById('cookpad').href = theItem.recept_link;
 
-		document.getElementById('cookpad').href = theItem.recept_link;
+			document.getElementById('cookpad-aji').style.display = theItem.aji_link ? 'inline-block' : 'none';
+			document.getElementById('cookpad-aji').href = theItem.aji_link;
 
-		document.getElementById('cookpad-aji').style.display = theItem.aji_link ? 'inline-block' : 'none';
-		document.getElementById('cookpad-aji').href = theItem.aji_link;
+			document.getElementById('google-docs').href = theItem.novella_link;
 
-		document.getElementById('google-docs').href = theItem.novella_link;
-
-		document.getElementById(theItem.zene_szolgaltato).style.display = 'inline-block';
-		document.getElementById(theItem.zene_szolgaltato).href = theItem.zene_link;
-	}
-	
+			document.getElementById(theItem.zene_szolgaltato).style.display = 'inline-block';
+			document.getElementById(theItem.zene_szolgaltato).href = theItem.zene_link;
+		}
 	</script>
-
 </head>
 <body>
+	<!-- Primary Page Layout
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<div class="row">
+		<div class="column" style="margin-top: 10%">
+			<!-- Your Image Here -->
+			<!-- <img src="images/avatar.png" srcset="images/avatar@2x.png 2x"> -->
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="column" style="margin-top: 10%">
-        <!-- Your Image Here -->
-        <!-- <img src="images/avatar.png" srcset="images/avatar@2x.png 2x"> -->
+			<!-- Your Name -->
+			<h1 id="nev">Batyu</h1>
 
-        <!-- Your Name -->
-        <h1 id="nev">Batyu</h1>
+			<!-- Short Bio -->
+			<p>Tök jó, hogy nálad a batyu! Most már csak indítsd el a zenét, nyisd meg a receptet és vezesd le a novellával! Pszt: tényleg készítsd el 48 órán belül.</p>
 
-        <!-- Short Bio -->
-        <p>Tök jó, hogy nálad a batyu! Most már csak indítsd el a zenét, nyisd meg a receptet és vezesd le a novellával! Pszt: tényleg készítsd el 48 órán belül.</p>
-        
+			<!-- Replace # with your profile URL. Delete whatever you don't need & create your own brand styles in css/brands.css -->
 
-        <!-- Replace # with your profile URL. Delete whatever you don't need & create your own brand styles in css/brands.css -->  
+			<!-- Cookpad -->
+			<a id="cookpad" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Recept</a>
 
-        <!-- Cookpad -->
-        <a id="cookpad" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Recept</a>
+			<!-- Cookpad aji -->
+			<a id="cookpad-aji" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Aji recept</a>
 
-        <!-- Cookpad aji -->
-        <a id="cookpad-aji" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Aji recept</a>
+			<!-- Google Docs -->
+			<a id="google-docs" class="button button-google-docs" href="#" target="_blank"><img class="icon" src="icons/google-docs.svg">Irodalom</a>
 
-        <!-- Google Docs -->
-        <a id="google-docs" class="button button-google-docs" href="#" target="_blank"><img class="icon" src="icons/google-docs.svg">Irodalom</a>
+			<!-- YouTube -->
+			<a id="youtube" class="button button-youtube" href="#" target="_blank"><img class="icon" src="icons/youtube.svg">Háttérzene</a>
 
-        <!-- YouTube -->
-        <a id="youtube" class="button button-youtube" href="#" target="_blank"><img class="icon" src="icons/youtube.svg">Háttérzene</a>
+			<!-- Mixcloud -->
+			<a id="mixcloud" class="button button-mixcloud" href="#" target="_blank"><img class="icon" src="icons/mixcloud.png">Háttérzene</a>
 
-        <!-- Mixcloud -->
-        <a id="mixcloud" class="button button-mixcloud" href="#" target="_blank"><img class="icon" src="icons/mixcloud.png">Háttérzene</a>
+			<!-- Spotify -->
+			<a id="spotify" class="button button-spotify" href="#" target="_blank"><img class="icon" src="icons/spotify.svg">Háttérzene</a>
 
-        <!-- Spotify -->
-        <a id="spotify" class="button button-spotify" href="#" target="_blank"><img class="icon" src="icons/spotify.svg">Háttérzene</a>
-
-        <!-- SoundCloud -->
-        <a id="soundcloud" class="button button-soundcloud" href="#" target="_blank"><img class="icon" src="icons/soundcloud.svg">Háttérzene</a>
-          
-      </div>
-    </div>
-  </div>
+			<!-- SoundCloud -->
+			<a id="soundcloud" class="button button-soundcloud" href="#" target="_blank"><img class="icon" src="icons/soundcloud.svg">Háttérzene</a>
+		</div>
+		</div>
+	</div>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
