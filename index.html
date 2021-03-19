@@ -34,35 +34,40 @@
 			recept_link : 'https://bit.ly/3rQAlLS',
 			zene_szolgaltato : 'spotify',
 			zene_link : 'http://spoti.fi/3llK8Hh',
-			novella_link : 'http://bit.ly/3bQjyD0'
+			novella_link : 'http://bit.ly/3bQjyD0',
+			aji_link : null,
 		},
 		szecsuani_csirkemell_brokkolival : {
 			nev : 'Szecsuáni csirkemell brokkolival',
 			recept_link : 'https://bit.ly/30KjGOl',
 			zene_szolgaltato : 'soundcloud',
 			zene_link : 'http://bit.ly/3bQEMRt',
-			novella_link : 'http://bit.ly/2OEdvsD'
+			novella_link : 'http://bit.ly/2OEdvsD',
+			aji_link : null,
 		},
 		szecsuani_szejtan_brokkolival : {
 			nev : 'Szecsuáni szejtán brokkolival',
 			recept_link : 'https://bit.ly/3cyrzvH',
 			zene_szolgaltato : 'mixcloud',
 			zene_link : 'http://bit.ly/2NkKa5I',
-			novella_link : 'http://bit.ly/2OEdvsD'
+			novella_link : 'http://bit.ly/2OEdvsD',
+			aji_link : null,
 		},
 		csirke_curry_basmati_rizzsel_es_lepenykenyerrel : {
 			nev : 'Csirke curry basmati rizzsel és lepénykenyérrel',
 			recept_link : 'https://bit.ly/3eKBmBE',
 			zene_szolgaltato : 'youtube',
 			zene_link : 'https://bit.ly/3qPBuC7',
-			novella_link : 'http://bit.ly/3bQjyD0'
+			novella_link : 'http://bit.ly/3bQjyD0',
+			aji_link : 'https://bit.ly/2P89KLI',
 		},
 		zoldseges_curry_basmati_rizzsel_es_lepenykenyerrel : {
 			nev : 'Zöldséges curry basmati rizzsel és lepénykenyérrel',
 			recept_link : 'https://bit.ly/3vri4XH',
 			zene_szolgaltato : 'youtube',
 			zene_link : 'https://bit.ly/3cA8jOv',
-			novella_link : 'http://bit.ly/3ttSEHj'
+			novella_link : 'http://bit.ly/3ttSEHj',
+			aji_link : 'https://bit.ly/30Ylwv6',
 		},
 	};
 
@@ -74,8 +79,14 @@
 	window.onload = () => {
 		document.title = theItem.nev + ' - batyu recept'
 		document.getElementById('nev').innerHTML = theItem.nev;
+
 		document.getElementById('cookpad').href = theItem.recept_link;
+
+		document.getElementById('cookpad-aji').style.display = theItem.aji_link ? 'inline-block' : 'none';
+		document.getElementById('cookpad-aji').href = theItem.aji_link;
+
 		document.getElementById('google-docs').href = theItem.novella_link;
+
 		document.getElementById(theItem.zene_szolgaltato).style.display = 'inline-block';
 		document.getElementById(theItem.zene_szolgaltato).href = theItem.zene_link;
 	}
@@ -104,6 +115,10 @@
 
         <!-- Cookpad -->
         <a id="cookpad" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Recept</a>
+          <br>
+
+        <!-- Cookpad aji -->
+        <a id="cookpad-aji" class="button button-cookpad" href="#" target="_blank"><img class="icon" src="icons/cookpad.png">Aji recept</a>
           <br>
 
         <!-- Google Docs -->
