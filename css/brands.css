@@ -103,6 +103,15 @@ button:hover,
   .button.button-mixcloud:focus {
 	filter: brightness(90%) }
   
+  /* NTS Live */
+  .button.button-ntslive {
+	display: none;
+	color: #fff;
+	background-color: #000 }
+  .button.button-mixcloud:hover,
+  .button.button-mixcloud:focus {
+	filter: brightness(90%) }
+  
   /* Discord */
   .button.button-discord {
 	color: #FFFFFF;
