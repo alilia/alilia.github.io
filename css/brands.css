@@ -108,8 +108,8 @@ button:hover,
 	display: none;
 	color: #fff;
 	background-color: #000 }
-  .button.button-mixcloud:hover,
-  .button.button-mixcloud:focus {
+  .button.button-ntslive:hover,
+  .button.button-ntslive:focus {
 	filter: brightness(90%) }
   
   /* Discord */
